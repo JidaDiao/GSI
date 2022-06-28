@@ -1,0 +1,32 @@
+#test FGSM
+image: "/Users/jixiaojian/Desktop/Gradient inversion/image/American_eagle_22.png" # Norwich terrier:186 American eagle：22
+label: 22
+model: "resnet34"
+name: "eagle"
+attack: "FGSM"
+eps: 4/255
+
+
+#test I-FGSM
+#image: "/Users/jixiaojian/Desktop/Gradient inversion/image/American_eagle_22.png" # Norwich terrier:186 American eagle：22
+#label: 22
+#model: "resnet34"
+#name: "eagle"
+#attack: "I-FGSM"
+#eps: 4/255
+#steps: 5
+
+
+#test CW
+#image: "/Users/jixiaojian/Desktop/Gradient inversion/image/American_eagle_22.png" # Norwich terrier:186 American eagle：22
+#label: 22
+#model: "resnet34"
+#name: "eagle"
+#attack: "CW"
+#c: 1e-2
+
+#main
+mainattack: [ 'FGSM-2/255','FGSM-4/255','I-FGSM-2/255-5','I-FGSM-2/255-10','I-FGSM-4/255-5','I-FGSM-4/255-10','I-FGSM-8/255-5','I-FGSM-8/255-10','CW' ]
+modellist: [ 'resnet50', 'resnet101', 'densenet169', 'efficientnet_b4',
+             'vit_base_patch16_224' ]
+modellist299: [ 'inception_v3', 'inception_v4' ]
